@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: always
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: alpine-1
+      image: alpine
+      args:
+        - sleep
+        - 10mb
+    - name: alpine-2
+      image: alpine
+      args:
+        - sleep
+        - 10mb
