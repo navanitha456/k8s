@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+spec:
+  minReadySeconds: 2
+  replicas: 1
+  selector:
+    matchLabels:
+      devops: aws
+  template:
+    metadata:
+      labels:
+         aws: jenkins
+  spec:
+    containers:
+      - name: nopcommerce
+        image: neelima456/nopcommerce:latest
+        args:
+         -sleep
+          1d
+        ports:
+          - containerport: 5000 
+           
+
+          
+
+
+
+   
+               
+          
+
+        

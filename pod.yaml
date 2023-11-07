@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: k8s1
+  labels:
+    env1: dev
+spec:
+  restartPolicy: OnFailure,
+
+  containers:
+    - name: nop
+      image: batchusivaji/nopcommerce:latest
+      ports:
+        - containerPort: 5000
+    
+  
+
+

@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nop
+spec:
+  minReadySeconds: 1
+  replicas: 3
+  selector:
+
+    matchLabels:
+      pod: devops
+  template:
+    metedata:
+      labels:
+        dev: devops
+    spec:
+      containers:
+        - name: nop
+          image: neelima456/nopcommerce:latest
+          args:
+            - sleep
+            - 1d
+          ports:
+            - containerPort: 5000
+          
+
+          
+        
+      
+    
+
+     
+    
+
