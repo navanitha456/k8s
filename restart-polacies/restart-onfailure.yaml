@@ -15,4 +15,4 @@ spec:
       image: alpine
       args:
         - sleep
-        - 10mb
+        - 20s
