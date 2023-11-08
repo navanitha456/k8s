@@ -2,17 +2,18 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: dev-pod
+  name: pod1
 spec:
   minReadySeconds: 1
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       dev: pre-prod
   template:
     metadata:
       labels:
-        dev: pre-prod
+        pod: replicas 5
+        
     spec:
       containers:
         - name: nop
