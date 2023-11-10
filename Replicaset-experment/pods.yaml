@@ -68,27 +68,3 @@ spec:
       ports:
          - containerPort: 8080
 
----
-apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: replicaset
-  labels:
-    app: qa
-spec:
-  minReadySeconds: 2
-  replicas: 10
-  selector:
-    matchLabels:
-      laptop: keyboard
-  template:
-    metadata:
-      name: labels
-      labels:
-        laptop: keyboard
-    spec:
-      containers:
-        - name: replicas
-          image: jenkins/jenkins
-          ports:
-            - containerPort: 8080
