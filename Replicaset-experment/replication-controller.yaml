@@ -1,6 +1,6 @@
 ---
 apiVersion: v1
-kind: ReplcationController
+kind: ReplicationController
 metadata:
   name: replication-controller
   labels:
