@@ -59,4 +59,4 @@ spec:
       image: batchusivaji/nopcommerce:latest
       args:
         - sleep
-        - 1d  
+        - 1d    
