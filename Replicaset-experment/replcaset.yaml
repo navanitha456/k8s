@@ -2,12 +2,12 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: replicaset-1
+  name: replicaset-2
   labels:
     dev: cloud
 spec:
   minReadySeconds: 2
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       dev: cloud

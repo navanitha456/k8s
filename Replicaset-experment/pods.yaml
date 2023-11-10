@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dev-pod
+  name: qa-pod
   labels:
     dev: cloud
 spec:
@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dev-pod-1
+  name: qa-pod-1
   labels:
     dev: cloud
 spec:
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dev-pod-2
+  name: qa-pod-2
   labels:
     dev: cloud
 spec:
@@ -44,7 +44,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dev-pod-3
+  name: qa-pod-3
   labels:
     dev: cloud
 spec:
@@ -58,7 +58,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dev-pod-4
+  name: qa-pod-4
   labels:
     dev: cloud
 spec:
