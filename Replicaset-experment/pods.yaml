@@ -4,7 +4,7 @@ kind: Pod
 metadata:
   name: dev-pod
   labels:
-    app: qa
+    dev: cloud
 spec:
   containers:
     - name: jenkins
@@ -18,7 +18,7 @@ kind: Pod
 metadata:
   name: dev-pod-1
   labels:
-    app: qa
+    dev: cloud
 spec:
   containers:
     - name: jenkins
@@ -32,7 +32,7 @@ kind: Pod
 metadata:
   name: dev-pod-2
   labels:
-    app: qa
+    dev: cloud
 spec:
   containers:
     - name: jenkins
@@ -46,7 +46,7 @@ kind: Pod
 metadata:
   name: dev-pod-3
   labels:
-    app: qa
+    dev: cloud
 spec:
   containers:
     - name: jenkins
@@ -60,7 +60,7 @@ kind: Pod
 metadata:
   name: dev-pod-4
   labels:
-    app: qa
+    dev: cloud
 spec:
   containers:
     - name: jenkins

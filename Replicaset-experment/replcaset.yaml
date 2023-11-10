@@ -4,18 +4,18 @@ kind: ReplicaSet
 metadata:
   name: replicaset
   labels:
-    app: qa
+    dev: cloud
 spec:
   minReadySeconds: 2
   replicas: 1
   selector:
     matchLabels:
-      laptop: keyboard
+      dev: cloud
   template:
     metadata:
       name: labels
       labels:
-        laptop: keyboard
+        dev: cloud
     spec:
       containers:
         - name: replicas

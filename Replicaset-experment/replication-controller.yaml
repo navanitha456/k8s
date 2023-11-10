@@ -4,7 +4,7 @@ kind: ReplicationController
 metadata:
   name: replication-controller
   labels:
-    app: qa
+    dev: cloud
 spec:
   minReadySeconds: 2
   replicas: 10
