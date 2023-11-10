@@ -32,7 +32,7 @@ metadata:
 spec:
   containers:
     - name: jenkins
-      image: jenkins/
+      image: jenkins/jenkins
       
 ---
 apiVersion: v1
