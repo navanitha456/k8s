@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: replicaset
+  name: replicaset-1
   labels:
     dev: cloud
 spec:
