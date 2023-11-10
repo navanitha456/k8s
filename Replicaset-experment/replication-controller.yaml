@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ReplcationController
+metadata:
+  name: replication-controller
+  labels:
+    app: qa
+spec:
+  minReadySeconds: 2
+  replicas: 10
+  selector:
+    dev: cloud
+  template:
+    metadata:
+      labels:
+        dev: cloud
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
