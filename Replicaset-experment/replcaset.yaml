@@ -6,19 +6,42 @@ metadata:
   labels:
     dev: cloud
 spec:
-  minReadySeconds: 2
-  replicas: 10
+  minReadySeconds:
   selector:
-    matchLabels:
-      dev: cloud
+    matchExpressions:
+      - key: dev
+        operator: In
+        values:
+          -app
+          -pre-prod
+      - key: prod
+        operator:NotIn
+        values:
+          - qa
+          - env
+  replicas: 2          
   template:
     metadata:
-      name: labels
       labels:
-        dev: cloud
+       devops-version
     spec:
       containers:
         - name: replicas
           image: jenkins/jenkins
-          ports:
-            - containerPort: 8080
+          ports::
+            - containerPort: 
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+spec:
+  selector:
+    aws: devops
+    prod: devops-version
+   type: NodePort
+   ports:
+     - port: 80
+       targetport: 8080 
