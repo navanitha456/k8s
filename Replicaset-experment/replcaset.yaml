@@ -12,10 +12,10 @@ spec:
       - key: dev
         operator: In
         values:
-          -app
-          -pre-prod
+          - app
+          - pre-prod
       - key: prod
-        operator:NotIn
+        operator: NotIn
         values:
           - qa
           - env
@@ -23,13 +23,14 @@ spec:
   template:
     metadata:
       labels:
-       devops-version
+        dev: app
+        prod: cloud
     spec:
       containers:
         - name: replicas
           image: jenkins/jenkins
-          ports::
-            - containerPort: 
+          ports:
+            - containerPort: 8080 
 
 
 ---
@@ -39,9 +40,11 @@ metadata:
   name: service
 spec:
   selector:
-    aws: devops
-    prod: devops-version
-   type: NodePort
-   ports:
-     - port: 80
-       targetport: 8080 
+    dev: app
+    prod: cloud
+
+    
+  type: NodePort
+  ports:
+    - port: 80
+      targetport: 8080 
