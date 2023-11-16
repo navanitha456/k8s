@@ -31,6 +31,7 @@ spec:
           image: jenkins/jenkins
           ports:
             - containerPort: 8080 
+              name: svc
 
 
 ---
@@ -47,4 +48,6 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      targetport: 8080 
+      targetport: svc
+
+
