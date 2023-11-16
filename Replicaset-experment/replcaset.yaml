@@ -2,11 +2,11 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: replicaset-2
+  name: replicaset
   labels:
     dev: cloud
 spec:
-  minReadySeconds:
+  minReadySeconds: 2
   selector:
     matchExpressions:
       - key: dev
@@ -46,5 +46,5 @@ spec:
     
   type: NodePort
   ports:
-    - port: 80
+    - port: 8080
       targetport: 8080 
