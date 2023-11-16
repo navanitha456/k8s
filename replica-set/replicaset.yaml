@@ -41,21 +41,21 @@ spec:
         databases: oracledb
     spec:
       containers:
-        - name: httpd
-          image: httpd:2.4.58
+        - name: nginx
+          image: nginx
           command:
             - sleep
             - 1d
           ports:
-            - name: httpd
+            - name: nginx
               protocol: TCP
               containerPort: 80
-        - name: tomcat
-          image: tomcat:11.0
+        - name: nop
+          image: neelima456/nopcommerce:latest
           command:
             - sleep
             - 1d
           ports:
-            - name: tomcat
+            - name: nop
               protocol: TCP
-              containerPort: 8080
+              containerPort: 5000

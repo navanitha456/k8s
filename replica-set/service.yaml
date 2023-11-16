@@ -11,13 +11,13 @@ spec:
     devops: git
     databases: oracledb 
   ports:
-    - name: httpd
+    - name: nginx
       port: 80
       protocol: TCP
-      targetPort: httpd
-      nodePort: 31000
-    - name: tomcat
-      port: 8080
+      targetPort: nginx
+      nodePort: 32000
+    - name: nop
+      port: 5000
       protocol: TCP
-      targetPort: 8080
-      nodePort: 31001
+      targetPort: 5000
+      nodePort: 32001
