@@ -48,6 +48,6 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      targetport: svc
+      targetPort: svc
 
 
