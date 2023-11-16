@@ -15,9 +15,9 @@ spec:
       port: 80
       protocol: TCP
       targetPort: nginx
-      nodePort: 32000
-    - name: nop
-      port: 5000
-      protocol: TCP
-      targetPort: 5000
-      nodePort: 32001
+      nodePort: 32003
+    # - name: nop
+    #   port: 5000
+    #   protocol: TCP
+    #   targetPort: 5000
+    #   nodePort: 32001

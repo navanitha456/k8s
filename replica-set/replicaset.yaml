@@ -50,12 +50,12 @@ spec:
             - name: nginx
               protocol: TCP
               containerPort: 80
-        - name: nop
-          image: neelima456/nopcommerce:latest
-          command:
-            - sleep
-            - 1d
-          ports:
-            - name: nop
-              protocol: TCP
-              containerPort: 5000
+        # - name: nop
+        #   image: neelima456/nopcommerce:latest
+        #   command:
+        #     - sleep
+        #     - 1d
+        #   ports:
+        #     - name: nop
+        #       protocol: TCP
+        #       containerPort: 5000
