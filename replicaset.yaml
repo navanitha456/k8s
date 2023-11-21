@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: desire-replicas
+spec:
+  minReadySeconds: 1
+  replicas: 1
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - azure
+          - aws
+          - gcp
+      - key: network
+        operator: NotIn
+        values:
+          - vpc
+          - subnet
+          - routetable
+      - key: devops
+        operator: In
+        values:
+          - ansible
+          - git
+          - jenkins
+      - key: databases
+        operator: NotIn
+        values:
+          - mysql
+          - nosql
+          - mangodb
+  template:
+    metadata:
+      labels:
+        app: gcp
+        network: natgateway
+        devops: git
+        databases: oracledb
+    spec:
+      containers:
+        - name: httpd
+          image: httpd:2.4.58
+          command:
+            - sleep
+            - 1d
+          ports:
+            - name: httpd
+              protocol: TCP
+              containerPort: 80
+        - name: tomcat
+          image: tomcat:11.0
+          command:
+            - sleep
+            - 1d
+          ports:
+            - name: tomcat
+              protocol: TCP
+              containerPort: 8080
