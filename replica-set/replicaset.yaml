@@ -5,7 +5,7 @@ metadata:
   name: desire-replicas
 spec:
   minReadySeconds: 1
-  replicas: 1
+  replicas: 2
   selector:
     matchExpressions:
       - key: app
