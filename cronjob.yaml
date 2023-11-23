@@ -1,0 +1,32 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob
+  labels:
+    app: jenkins
+  namespace: qa
+spec:
+  schedule: '* * * * *'
+  jobTemplate:
+    metadata:
+      labels:
+        preprod: devops
+    spec:
+      backoffLimit: 6
+      selector:
+        matchLabels:
+          preprod: devops
+      template:
+        metadata:
+          labels:
+            preprod: devops
+        spec:
+          containers:
+            - name: jenkins
+              image: jenkins/jenkins
+              args:
+                - sleep
+                - 1d
+  failedJobsHistoryLimit: 2
+  successfulJobsHistoryLimit: 3
