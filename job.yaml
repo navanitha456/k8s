@@ -11,7 +11,8 @@ spec:
     metadata:
       labels:
         preprod: devops
-    spec: 
+    spec:
+      restartPolicy: OnFailure 
       containers:
         - name: nginx
           image: nginx 
