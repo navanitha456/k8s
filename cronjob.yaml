@@ -14,14 +14,12 @@ spec:
         preprod: devops
     spec:
       backoffLimit: 6
-      selector:
-        matchLabels:
-          preprod: devops
       template:
         metadata:
           labels:
             preprod: devops
         spec:
+          restartPolicy: OnFailure
           containers:
             - name: jenkins
               image: jenkins/jenkins
