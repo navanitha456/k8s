@@ -1,0 +1,20 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+  labels:
+    app: nginx 
+  namespace: devops
+spec:
+  template:
+    metadata:
+      labels:
+        preprod: devops
+    spec: 
+      containers:
+        - name: nginx
+          image: nginx 
+          ports:
+            - containerPort: 80
+            
